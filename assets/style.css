@@ -1,0 +1,39 @@
+#title {
+    font-size: 150%;
+    text-align: center;
+
+}
+
+#welcomeText {
+    text-align: center;
+}
+
+#start {
+    display: block;
+    margin:auto;
+}
+
+#timerDisplay{
+    display:inline;
+}
+
+
+#feedback {
+    text-align: center;
+}
+
+#scoreboard {
+    width: 20%;
+    
+}
+
+.clear {
+    clear: both;
+  }
+
+#timerDisplay{
+    border:solid;
+    padding:0.5em;
+    border-radius: 10px;
+    border-color: rgb(145, 145, 145);
+}
