@@ -45,14 +45,12 @@ $(body).append("<hr class ='col-md-6 offset-md-3' ><p id = 'feedback'></p>")
 // Setting play duration to 180 seconds (3 minutes)
 function startTimer(){
   time = 180;
-  console.log('timer suppose to go')
   var timerDisplay = document.getElementById("countdowntimer")
   var timer = setInterval(function(){
       time--;
       var minutes = parseInt(time / 60, 10);
       var seconds = parseInt(time % 60, 10);
       timerDisplay.innerHTML = minutes + ":" +seconds;
-      console.log("DFAFDSAFDAS")
       if (seconds < 10) {
         timerDisplay.innerHTML = minutes + ":" + "0" + seconds;
       } else {
@@ -169,16 +167,13 @@ function runQuiz(quiz) {
   var answersOptions = $("<div class = 'offset-md-4'> <div>")
   $(body).append(answersOptions)
 
-//Create a button for each option
-  // for (var i = 0; i <= currentSet.answers; i++) {
-  //   console.log("sdsadadddddd")
-
+// Changes and display question and answer sets
   displaySet()
   function displaySet (){
     currentSet = quiz [s]
     questionDisplay.text (currentSet.question)
     $.each(currentSet.answers, function (x,y) {
-      var optionBut = $("<button>").text(y)
+      var optionBut = $("<button class = 'ans'>").text(y)
       var ansContainer = $("<div></div>")
       $(optionBut).on("click", function () {
         var feedbackMessage = $("#feedback")
@@ -192,11 +187,8 @@ function runQuiz(quiz) {
       })
       ansContainer.append(optionBut)
       answersOptions.append(ansContainer)
-      
-      console.log(y)
-      console.log(currentSet.correctAnswer)
       if (y !== currentSet.correctAnswer) {
-        $(optionBut).attr("class", "wrongChoice")
+        $(optionBut).attr("class", "ans wrongChoice")
       }
       optionBut.on("click", function () {nextQ()})
       if (s == quiz.length - 1) {
@@ -208,23 +200,17 @@ function runQuiz(quiz) {
  
 
 
-
+// function that triggers next question/answer set
   function nextQ() {
     if (s < quiz.length - 1) { 
     s++
     currentSet = quiz [s]
     answersOptions.empty()
-    displaySet()
-    console.log(currentSet.correctAnswer)
-    
+    displaySet()    
+  }
   }
 }
-}
-
-
-
 // Submit button
-console.log(localStorage.length)
 var playerName = "";
 if (localStorage.length == 0) {
 var nameOrder = localStorage.length;
@@ -234,6 +220,7 @@ var scoreOrder = localStorage.length;
   scoreOrder = localStorage.length;
 }
 
+// Function to submit names and scores at the end of the quiz
 function nameAndScore () {
   var getName = $("<input id = 'nameInput'></input>")
   getName.attr("value", "")
@@ -243,7 +230,6 @@ function nameAndScore () {
   $(body).append ("<span class = 'offset-md-4'></span>")
   $("span").append("Enter initials: ").append(getName)
   $(body).append (subm)
-  console.log("dafdafdsafdsa")
   $("#submitPlay").on("click", function () { 
     console.log(nameOrder)
     console.log(scoreOrder)
@@ -303,24 +289,5 @@ var setCount = 0;
 function setToZero() {
   startBut.addEventListener("click", function(){setCount = 0});
 }
-
-// Next question
-// var i = 0
-// var currentSet = ""
-
-// // Function to check answer
-// $("[class*='choice']").click(function() {
-//   var selection = $(this).val();
-//   console.log(selection)
-// })
-
-
-
-// x = document.getElementsByClassName("choice")
-// $.each(currentSet.answers, function(index, value) {
-//   if (currentSet.correctAnswer === value) {
-//     alert("CORRECT")
-//   }
-// })
 
 

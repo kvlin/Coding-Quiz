@@ -14,7 +14,8 @@
 }
 
 #timerDisplay{
-    display:inline;
+    display: inline-block;
+    margin-top: 9px;
 }
 
 
@@ -36,4 +37,8 @@
     padding:0.5em;
     border-radius: 10px;
     border-color: rgb(145, 145, 145);
+}
+
+.ans{
+    margin: 0.5em 0em;
 }
