@@ -56,7 +56,7 @@ function startTimer(){
       } else {
         timerDisplay.innerHTML = minutes + ":" +seconds;
       }
-      if (time <= 0) {
+      if (time < 0) {
           clearInterval(timer);
           alert("Time is up!")
           document.body.innerHTML = "";
