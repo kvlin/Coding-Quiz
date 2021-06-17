@@ -1,12 +1,14 @@
 #title {
     font-size: 150%;
     text-align: center;
+    color:rgb(54, 54, 54)
 
 }
 
-#welcomeText {
+.centerHomeText {
     text-align: center;
 }
+
 
 #start {
     display: block;

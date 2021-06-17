@@ -8,8 +8,9 @@ var body = document.body
 // *********************************************************************Home page
 // Home elements
 
-var homeTitle = $("<header id='title'>Coding Quiz Challenge</header>")
-var welcomeText = $("<p id = 'welcomeText'>Welcome to the Coding Quiz Challenge, click the button below to start the quiz.</p>")
+var homeTitle = $("<header id='title'>Coding Quiz Challenge</header></br>")
+var welcomeText = $("<p id = 'welcomeText' class = 'centerHomeText'>Welcome to the Coding Quiz Challenge, click the button below to start the quiz.</p>")
+var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rules:</strong> The total quiz duration is 3 minutes,clicking on incorrect options will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
 var startBut = $("<button id='start'>Start Quiz!</button>")
 var viewScores = $("<button id='viewScores' class = 'offset-md-3' onclick = 'scoreboardLoad()'>View Highscores</button>")
 var clearScores = $("<button id='clearScores' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
@@ -18,6 +19,7 @@ function loadHome () {
   $(body).append(viewScores)
   $(body).append(homeTitle)
   $(body).append(welcomeText)
+  $(body).append(rulesText)
   $(body).append(startBut)
 }
 loadHome()
@@ -154,10 +156,6 @@ var myQASets= [ {
 var score = 0;
 // Create question and answer option diplay (after clicking on the start button)
 function runQuiz(quiz) {
-// var answerList = [];
-// for (var i =0; i <= currentSet.answers; i++) {
-//   answerList [i] = currentSet.answers.[i]
-// }
 
   var s = 0;
   currentSet = quiz [s]
@@ -227,8 +225,8 @@ function nameAndScore () {
   var subm = $("<button id = 'submitPlay'>Submit Result</button>")
   var yourScore =  $("<p class = 'offset-md-4'> Your final score is: " + score + "</p>")
   $(body).append (yourScore)
-  $(body).append ("<span class = 'offset-md-4'></span>")
-  $("span").append("Enter initials: ").append(getName)
+  $(body).append ("<span class = 'offset-md-4 yourScore'></span>")
+  $(".yourScore").append("Enter initials: ").append(getName)
   $(body).append (subm)
   $("#submitPlay").on("click", function () { 
     console.log(nameOrder)
