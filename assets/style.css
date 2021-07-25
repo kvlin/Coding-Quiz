@@ -44,6 +44,9 @@ body {
     padding:0.5em;
     border-radius: 10px;
     border-color: rgb(145, 145, 145);
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    width: 14.2ch;
+    
 }
 
 .ans{
@@ -62,7 +65,7 @@ body {
 
 #scoreboard-btns-container button {
     margin-left: auto;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.34) 0px 1px 3px, rgba(0, 0, 0, 0.34) 0px 1px 2px;
 }
 
 .page-heading {
