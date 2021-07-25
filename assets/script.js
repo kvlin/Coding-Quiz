@@ -13,7 +13,7 @@ var welcomeText = $("<p id = 'welcomeText' class = 'centerHomeText'>Welcome to t
 var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rules:</strong> The total quiz duration is 3 minutes,clicking on incorrect options will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
 var startBut = $("<button id='start'>Start Quiz!</button>")
 var viewScores = $("<button id='viewScores' class = 'offset-md-3' onclick = 'scoreboardLoad()'>View Highscores</button>")
-var clearScores = $("<button id='clearScores' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
+var clearScoresBtn = $("<button id='clearScoresBtn' class='btn btn-danger' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
 function loadHome () {
   document.body.innerHTML = "";
   $(body).append(viewScores)
@@ -25,7 +25,7 @@ function loadHome () {
 loadHome()
 $("button").addClass("btn btn-primary")
 
-homeBut = $("<button id='home' class = 'offset-md-3'>Home</button>").on("click", function () {
+homeBtn = $("<button id='home' class = 'btn btn-secondary '>Home</button>").on("click", function () {
   loadHome()
 })
 
@@ -251,8 +251,11 @@ function nameAndScore () {
 function scoreboardLoad() {
   document.body.innerHTML = "";
 //Button to return home page
-  $(body).append(homeBut)
-  $(body).append(clearScores)
+  const btnContainer = document.createElement("div");
+  $(btnContainer).attr("id", "scoreboard-btns-container")
+  .append(homeBtn)
+  .append(clearScoresBtn)
+  $(body).append (btnContainer)
   $(body).append ("<table id = 'scoreboard' class= 'table table-striped offset-md-3' ></table>");
   var scoreboard = $("#scoreboard");
   var thead = $("<thead>")
@@ -276,8 +279,6 @@ function scoreboardLoad() {
     
   }
 }
-
-// Clear scoreboard
 
 // Show answer contents on buttons
 // QA set count/index
