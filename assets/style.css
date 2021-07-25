@@ -58,3 +58,15 @@
 #scoreboard-btns-container button {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
+
+.page-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem auto;
+    color: rgb(7, 103, 192);
+}
+
+hr {
+    width: 70%;
+    margin: 0 auto 2rem auto;
+}

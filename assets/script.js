@@ -250,6 +250,7 @@ function nameAndScore () {
 // Scoreboard
 function scoreboardLoad() {
   document.body.innerHTML = "";
+  $(body).append("<div class='page-heading'>Scoreboard</div><hr>")
 //Button to return home page
   const btnContainer = document.createElement("div");
   $(btnContainer).attr("id", "scoreboard-btns-container")
