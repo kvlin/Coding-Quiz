@@ -8,11 +8,11 @@ var body = document.body
 // *********************************************************************Home page
 // Home elements
 
-var homeTitle = $("<header id='title'>Coding Quiz Challenge</header></br>")
+var homeTitle = $("<div class='page-heading'>Coding Quiz Challenge</div><hr>")
 var welcomeText = $("<p id = 'welcomeText' class = 'centerHomeText'>Welcome to the Coding Quiz Challenge, click the button below to start the quiz.</p>")
 var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rules:</strong> The total quiz duration is 3 minutes,clicking on incorrect options will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
 var startBut = $("<button id='start'>Start Quiz!</button>")
-var viewScores = $("<button id='viewScores' class = 'offset-md-3' onclick = 'scoreboardLoad()'>View Highscores</button>")
+var viewScores = $("<button id='viewScores' class = 'offset-md-3 nav-btn btn btn-success' onclick = 'scoreboardLoad()'>View Highscores</button>")
 var clearScoresBtn = $("<button id='clearScoresBtn' class='btn btn-danger' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
 function loadHome () {
   document.body.innerHTML = "";
@@ -25,7 +25,7 @@ function loadHome () {
 loadHome()
 $("button").addClass("btn btn-primary")
 
-homeBtn = $("<button id='home' class = 'btn btn-secondary '>Home</button>").on("click", function () {
+homeBtn = $("<button id='home' class = 'btn btn-success nav-btn offset-md-3'>Home</button>").on("click", function () {
   loadHome()
 })
 
@@ -250,11 +250,13 @@ function nameAndScore () {
 // Scoreboard
 function scoreboardLoad() {
   document.body.innerHTML = "";
-  $(body).append("<div class='page-heading'>Scoreboard</div><hr>")
+  $(body)
+  .append(homeBtn)
+  .append("<div class='page-heading'>Scoreboard</div><hr>")
+  
 //Button to return home page
   const btnContainer = document.createElement("div");
   $(btnContainer).attr("id", "scoreboard-btns-container")
-  .append(homeBtn)
   .append(clearScoresBtn)
   $(body).append (btnContainer)
   $(body).append ("<table id = 'scoreboard' class= 'table table-striped offset-md-3' ></table>");
