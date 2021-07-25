@@ -171,7 +171,7 @@ function runQuiz(quiz) {
     currentSet = quiz [s]
     questionDisplay.text (currentSet.question)
     $.each(currentSet.answers, function (x,y) {
-      var optionBut = $("<button class = 'ans'>").text(y)
+      var optionBut = $("<button class = 'ans btn btn-light'>").text(y)
       var ansContainer = $("<div></div>")
       $(optionBut).on("click", function () {
         var feedbackMessage = $("#feedback")
@@ -186,7 +186,7 @@ function runQuiz(quiz) {
       ansContainer.append(optionBut)
       answersOptions.append(ansContainer)
       if (y !== currentSet.correctAnswer) {
-        $(optionBut).attr("class", "ans wrongChoice")
+        $(optionBut).attr("class", "ans btn btn-light wrongChoice")
       }
       optionBut.on("click", function () {nextQ()})
       if (s == quiz.length - 1) {
