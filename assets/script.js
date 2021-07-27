@@ -10,7 +10,7 @@ var body = document.body
 
 var homeTitle = $("<div class='page-heading'>Coding Quiz Challenge</div><hr>")
 var welcomeText = $("<p id = 'welcomeText' class = 'centerHomeText'>Welcome to the Coding Quiz Challenge, click the button below to start the quiz.</p>")
-var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rules:</strong> The total quiz duration is 3 minutes,clicking on incorrect options will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
+var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rule:</strong> 3 minutes quiz, wrong answer will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
 var startBut = $("<button id='start'>Start Quiz!</button>")
 var viewScores = $("<button id='viewScores' class = 'offset-md-3 nav-btn btn btn-success' onclick = 'scoreboardLoad()'>View Highscores</button>")
 var clearScoresBtn = $("<button id='clearScoresBtn' class='btn btn-danger' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
