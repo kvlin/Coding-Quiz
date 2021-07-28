@@ -16,14 +16,14 @@ var viewScores = $("<button id='viewScores' class = 'offset-md-3 nav-btn btn btn
 var clearScoresBtn = $("<button id='clearScoresBtn' class='btn btn-danger' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
 var rulesContainer = $("<ul id='rulesContainer'></ul>")
 var rulesTitle = $("<p id='rulesTitle'>Rules</p>")
-var rules= $("<li>8 Questions</li><li>Try answering all questions under 3 minutes</li><li>wrong answers will subtract the time by 40 seconds</li>")
+var rules= $("<li>8 Questions</li><li>Try answering all questions under 3 minutes</li><li>Wrong answers will subtract the time by 40 seconds</li>")
 function loadHome () {
   document.body.innerHTML = "";
   $(body).append(viewScores)
-  $(body).append(homeTitle)
-  $(body).append(welcomeText)
-  $(body).append(rulesContainer)
-  $(body).append(startBut)
+  .append(homeTitle)
+  .append(welcomeText)
+  .append(rulesContainer)
+  .append(startBut)
   $(rulesContainer)
   .append(rulesTitle)
   .append(rules)
@@ -235,16 +235,12 @@ function nameAndScore () {
   $(".yourScore").append("Enter initials: ").append(getName)
   $(body).append (subm)
   $("#submitPlay").on("click", function () { 
-    console.log(nameOrder)
-    console.log(scoreOrder)
     if (getName.val() === "") {
       getName.val("-")
     }
     var playerName = getName.val()
     nameOrder == 0 ? nameOrder +=1 : nameOrder +=2; 
     scoreOrder += 2
-    console.log(nameOrder)
-    console.log(scoreOrder)
     localStorage.setItem (nameOrder,playerName)
     localStorage.setItem (scoreOrder,score)
     scoreboardLoad()
@@ -274,10 +270,10 @@ function scoreboardLoad() {
   var userScore = $("<th>Score</th>");
   
   $(scoreboard).append (thead)
-  $(scoreboard).append (tbody)
+  .append (tbody);
   $(thead).append (headerRow)
-  $(headerRow).append(userName);
-  $(headerRow).append(userScore);
+  $(headerRow).append(userName)
+  .append(userScore);
   for (i=1; i<=localStorage.length;i += 2) {
     var row = $("<tr class = 'resultRow' scope='row'></tr>")
     $(tbody).append (row);
