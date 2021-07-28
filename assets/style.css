@@ -107,6 +107,16 @@ hr {
     margin-bottom: 12px;
 }
 
+#scoreMessage {
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+#scoreMessage span{
+    color: rgb(0, 89, 255);
+    font-size: 2rem;
+}
+
 @media only screen and (max-width:  770px) {
     .nav-btn {
         margin-left: 5px;

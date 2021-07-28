@@ -229,7 +229,7 @@ function nameAndScore () {
   var getName = $("<input id = 'nameInput'></input>")
   getName.attr("value", "")
   var subm = $("<button id = 'submitPlay' class = 'btn btn-light'>Submit Result</button>")
-  var yourScore =  $("<p class = 'offset-md-4'> Your final score is: " + score + "</p>")
+  var yourScore =  $(`<p id='scoreMessage' class = 'offset-md-4'> Your final score is: <span id="score">${score}</span> </p>`)
   $(body).append (yourScore)
   $(body).append ("<span class = 'offset-md-4 yourScore'></span>")
   $(".yourScore").append("Enter initials: ").append(getName)
