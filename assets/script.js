@@ -196,7 +196,7 @@ function runQuiz(quiz) {
       }
       optionBut.on("click", function () {nextQ()})
       if (s == quiz.length - 1) {
-        $(optionBut).attr("class","wrongChoice lastAns")
+        $(optionBut).attr("class","wrongChoice btn btn-light lastAns")
       }
       }
     )
@@ -228,7 +228,7 @@ var scoreOrder = localStorage.length;
 function nameAndScore () {
   var getName = $("<input id = 'nameInput'></input>")
   getName.attr("value", "")
-  var subm = $("<button id = 'submitPlay'>Submit Result</button>")
+  var subm = $("<button id = 'submitPlay' class = 'btn btn-light'>Submit Result</button>")
   var yourScore =  $("<p class = 'offset-md-4'> Your final score is: " + score + "</p>")
   $(body).append (yourScore)
   $(body).append ("<span class = 'offset-md-4 yourScore'></span>")

@@ -49,6 +49,8 @@ body {
     
 }
 
+#submitPlay,
+.lastAns,
 .ans{
     margin: 0.5em 0em;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -95,6 +97,14 @@ hr {
     font-weight: bold;
     text-align: center;
     margin-bottom: 0;
+}
+
+#nameInput {
+    margin-right: 2rem;
+}
+
+#submitPlay {
+    margin-bottom: 12px;
 }
 
 @media only screen and (max-width:  770px) {
