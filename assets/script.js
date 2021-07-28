@@ -10,17 +10,23 @@ var body = document.body
 
 var homeTitle = $("<div class='page-heading'>Coding Quiz Challenge</div><hr>")
 var welcomeText = $("<p id = 'welcomeText' class = 'centerHomeText'>Welcome to the Coding Quiz Challenge, click the button below to start the quiz.</p>")
-var rulesText = $("<div id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rule:</strong> 3 minutes quiz, wrong answer will subtract the time by 40 seconds.</div><p class = 'centerHomeText'>Good luck!!</p>")
+var rulesText1 = $("<li id = 'rulesText' class = 'centerHomeText'><strong class = 'centerHomeText'>Rule:</strong> 3 minutes quiz, wrong answer will subtract the time by 40 seconds.</li><p class = 'centerHomeText'>Good luck!!</p>")
 var startBut = $("<button id='start'>Start Quiz!</button>")
 var viewScores = $("<button id='viewScores' class = 'offset-md-3 nav-btn btn btn-success' onclick = 'scoreboardLoad()'>View Highscores</button>")
 var clearScoresBtn = $("<button id='clearScoresBtn' class='btn btn-danger' onclick = 'localStorage.clear(); location.reload()'>Clear Scores</button>")
+var rulesContainer = $("<ul id='rulesContainer'></ul>")
+var rulesTitle = $("<p id='rulesTitle'>Rules</p>")
+var rules= $("<li>8 Questions</li><li>Try answering all questions under 3 minutes</li><li>wrong answers will subtract the time by 40 seconds</li>")
 function loadHome () {
   document.body.innerHTML = "";
   $(body).append(viewScores)
   $(body).append(homeTitle)
   $(body).append(welcomeText)
-  $(body).append(rulesText)
+  $(body).append(rulesContainer)
   $(body).append(startBut)
+  $(rulesContainer)
+  .append(rulesTitle)
+  .append(rules)
 }
 loadHome()
 $("button").addClass("btn btn-primary")

@@ -86,6 +86,17 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.2) 0px 1px 2px;
 }
 
+#rulesContainer {
+    width: 500px;
+    margin: 0 auto 1rem auto;
+}
+
+#rulesTitle {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
 @media only screen and (max-width:  770px) {
     .nav-btn {
         margin-left: 5px;
